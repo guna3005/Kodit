@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Layout, Typography } from "antd";
 import styled from "styled-components";
-import { useLocation, useNavigation, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import LogoText from "../common/styledElements/LogoText";
 
 const { Header, Content } = Layout;

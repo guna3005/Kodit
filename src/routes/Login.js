@@ -36,10 +36,6 @@ const Logo = styled.div`
   margin-right: 16px;
 `;
 
-// const LogoText = styled(Title)`
-//   margin-top: 15px;
-//   font-size: 24px;
-// `;
 
 const FormContainer = styled(Content)`
   display: flex;
@@ -86,10 +82,11 @@ const LoginPage = () => {
 
   const onFinish = (values) => {
     console.log(values);
+    history.push("/main")
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo); // Handle form validation errors
+    console.log("Failed:", errorInfo); 
   };
 
   return (
