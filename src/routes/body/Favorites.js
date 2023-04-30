@@ -42,6 +42,7 @@ const DeleteButton = styled(Button)`
   border-color: transparent;
   color: #dc3545;
   margin-left: auto;
+  float: right;
 
   &:hover,
   &:focus {
@@ -50,6 +51,12 @@ const DeleteButton = styled(Button)`
     color: #c82333;
   }
 `;
+
+const FavoritesContentContainer = styled.div`
+display: flex;
+flex-direction: row;
+height: fit-content;
+`
 
 const Favorites = () => {
   const [modalVisible, setModalVisible] = React.useState(false);
@@ -65,27 +72,49 @@ const Favorites = () => {
     setModalVisible(false);
   };
 
-  const favorites = [    "React Hooks: A Guide for Beginners",    "10 Tips for Writing Clean Code",    "How to Build a RESTful API with Node.js",    "React vs Angular: Which One to Choose?",    "Getting Started with Python",    "10 JavaScript Libraries You Should Know About",    "React Hooks: A Guide for Beginners",    "10 Tips for Writing Clean Code",    "How to Build a RESTful API with Node.js",    "React vs Angular: Which One to Choose?",    "Getting Started with Python",    "10 JavaScript Libraries You Should Know About",  ];
+  const favorites = [
+    "React Hooks: A Guide for Beginners",
+    "10 Tips for Writing Clean Code",
+    "How to Build a RESTful API with Node.js",
+    "React vs Angular: Which One to Choose?",
+    "Getting Started with Python",
+    "10 JavaScript Libraries You Should Know About",
+    "Extra stuff for scrolabbility 1",
+    "Extra stuff for scrolabbility 2",
+    "Extra stuff for scrolabbility 3",
+    "Extra stuff for scrolabbility 4",
+    "Extra stuff for scrolabbility 5",
+    "Extra stuff for scrolabbility 6",
+  ];
 
   return (
     <FavoritesContainer>
       <Header>Favorites</Header>
       <FavoritesContent>
         {favorites.map((favorite) => (
-          <FavoriteButton
-            key={favorite}
-            onClick={() => handleFavoriteClick(favorite)}
-          >
-            {favorite.length > 20 ? `${favorite.substring(0, 20)}...` : favorite}
+          <FavoritesContentContainer>
+            <FavoriteButton
+              key={favorite}
+              onClick={() => handleFavoriteClick(favorite)}
+            >
+              {favorite.length > 20
+                ? `${favorite.substring(0, 20)}...`
+                : favorite}
+            </FavoriteButton>
             <DeleteButton icon={<DeleteOutlined />} />
-          </FavoriteButton>
+          </FavoritesContentContainer>
         ))}
       </FavoritesContent>
       <Modal
         title="Favorite"
-        visible={modalVisible}
+        open={modalVisible}
         onCancel={handleModalCancel}
-        footer={[          <Button key="cancel" onClick={handleModalCancel}>            Cancel          </Button>,        ]}
+        footer={[
+          <Button key="cancel" onClick={handleModalCancel}>
+            {" "}
+            Close{" "}
+          </Button>,
+        ]}
       >
         {selectedFavorite}
       </Modal>

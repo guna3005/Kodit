@@ -3,6 +3,7 @@ import NavBar from "../common/components/NavBar";
 import styled from "styled-components";
 import Favorites from "./body/Favorites";
 import Hashtags from "./body/HashTags";
+import Blog from "./body/Blogs";
 
 const BodyContainer = styled.div`
   display: grid;
@@ -39,7 +40,7 @@ const Main = () => {
       <FavoritesContainer><Favorites /></FavoritesContainer>
       <HashtagsContainer><Hashtags/> </HashtagsContainer>
       <BodyContentContainer>Body Content</BodyContentContainer>
-      <BlogsContainer>Blogs</BlogsContainer>
+      <BlogsContainer><Blog /> </BlogsContainer>
     </BodyContainer>
     </>
   );
