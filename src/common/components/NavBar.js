@@ -3,6 +3,7 @@ import { Button, Input, Layout, Typography } from "antd";
 import styled from "styled-components";
 import LogoText from "../styledElements/LogoText";
 import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const { Header } = Layout;
 
@@ -76,7 +77,9 @@ const NavBar = () => {
       </LogoContainer>
       <SearchBar placeholder="Search" />
       <NavMenu>
-        <ProfileButton icon={<UserOutlined />}>Profile</ProfileButton>
+        <ProfileButton icon={<UserOutlined />}>
+          <Link to="/profile">Profile</Link>
+        </ProfileButton>
         <LogoutButton icon={<LogoutOutlined />}>Logout</LogoutButton>
       </NavMenu>
     </NavContainer>

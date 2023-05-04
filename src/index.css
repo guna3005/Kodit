@@ -17,3 +17,8 @@ code {
   display: none;
 }
 
+.ant-card-meta-description,
+.ant-card-meta-title {
+  color: white !important;
+}
+

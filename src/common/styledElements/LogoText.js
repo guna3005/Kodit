@@ -26,12 +26,12 @@ const LogoTextTItle = styled(Title)`
 const LogoText = () => {
   return (
     <LogoTextTItle>
-            <span>K</span>
-            <span>O</span>
-            <span>D</span>
-            <span>I</span>
-            <span>T</span>
-          </LogoTextTItle>
+      <span>K</span>
+      <span>O</span>
+      <span>D</span>
+      <span>I</span>
+      <span>T</span>
+    </LogoTextTItle>
   );
 };
 
